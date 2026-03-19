@@ -3,6 +3,7 @@
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int opcio;
+    int opcioP;
     System.out.println("BENVINGUTS AL SAPAMERCAT");
     do {
         System.out.println("-----------\n---INICI---\n-----------");
@@ -14,7 +15,23 @@ public static void main(String[] args) {
         opcio = scanner.nextInt();
         switch (opcio) {
             case 1:
-
+                System.out.println("--------------\n---PRODUCTE---\n--------------");
+                System.out.println("1. Alimentació");
+                System.out.println("2. Tèxtil");
+                System.out.println("3. Electronica");
+                System.out.println("0. Tornar");
+                System.out.print("Introdueix el número de l'acció a executar: ");
+                opcioP = scanner.nextInt();
+                switch (opcioP) {
+                    case 1:
+                       break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 0:
+                        break;
+                }
                 break;
             case 2:
 
