@@ -1,14 +1,14 @@
-class Electronica extends Producto {
+class Electronica extends Producte {
 
-    private int diasGarantia;
+    private int diesGarantia;
 
-    public Electronica(String nombre, double precio, String codigoBarras, int diasGarantia) {
-        super(nombre, precio, codigoBarras);
-        this.diasGarantia = diasGarantia;
+    public Electronica(String nom, double preu, String codiBarres, int diesGarantia) {
+        super(nom, preu, codiBarres);
+        this.diesGarantia = diesGarantia;
     }
 
     @Override
-    public double calcularPrecio() {
-        return precio + precio * (diasGarantia / 365.0) * 0.1;
+    public double calcularPreu() {
+        return preu + preu * (diesGarantia / 365.0) * 0.1;
     }
 }

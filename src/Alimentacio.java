@@ -1,18 +1,18 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-class Alimentacion extends Producto {
+class Alimentacio extends Producte {
 
-    private LocalDate fechaCaducidad;
+    private LocalDate dataCaducitat;
 
-    public Alimentacion(String nombre, double precio, String codigoBarras, LocalDate fechaCaducidad) {
-        super(nombre, precio, codigoBarras);
-        this.fechaCaducidad = fechaCaducidad;
+    public Alimentacio(String nombre, double preu, String codiBarres, LocalDate dataCaducitat) {
+        super(nombre, preu, codiBarres);
+        this.dataCaducitat = dataCaducitat;
     }
 
     @Override
-    public double calcularPrecio() {
-        long dias = ChronoUnit.DAYS.between(LocalDate.now(), fechaCaducidad);
-        return precio - precio * (1.0 / (dias + 1)) + (precio * 0.1);
+    public double calcularPreu() {
+        long dias = ChronoUnit.DAYS.between(LocalDate.now(), dataCaducitat);
+        return preu - preu * (1.0 / (dias + 1)) + (preu * 0.1);
     }
 }

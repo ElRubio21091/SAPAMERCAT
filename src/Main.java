@@ -4,6 +4,9 @@ public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int opcio;
     int opcioP;
+    String nomP;
+    int preu;
+    int caducitat;
     System.out.println("BENVINGUTS AL SAPAMERCAT");
     do {
         System.out.println("-----------\n---INICI---\n-----------");
@@ -24,6 +27,13 @@ public static void main(String[] args) {
                 opcioP = scanner.nextInt();
                 switch (opcioP) {
                     case 1:
+                        System.out.println("Afegir alimentació\n");
+                        System.out.print("Nom producte: ");
+                        nomP=scanner.next();
+                        System.out.println("\nPreu: ");
+                        preu=scanner.nextInt();
+                        System.out.println("\nCaducitat: ");
+                        caducitat=scanner.nextInt();
                        break;
                     case 2:
                         break;

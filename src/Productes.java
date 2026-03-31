@@ -1,29 +1,29 @@
-abstract class Producto {
+abstract class Producte {
 
-    protected String nombre;
-    protected double precio;
-    protected String codigoBarras;
+    protected String nom;
+    protected double preu;
+    protected String codiBarres;
 
     // Constructor
-    public Producto(String nombre, double precio, String codigoBarras) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.codigoBarras = codigoBarras;
+    public Producte(String nombre, double preu, String codiBarres) {
+        this.nom = nombre;
+        this.preu = preu;
+        this.codiBarres = codiBarres;
     }
 
 
-    public abstract double calcularPrecio();
+    public abstract double calcularPreu();
 
     // Getters
-    public String getNombre() {
-        return nombre;
+    public String getNom() {
+        return nom;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getPreu() {
+        return preu;
     }
 
-    public String getCodigoBarras() {
-        return codigoBarras;
+    public String getCodiBarres() {
+        return codiBarres;
     }
 }
