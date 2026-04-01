@@ -1,0 +1,26 @@
+# Archivos compilados
+*.class
+
+# Carpeta de compilación
+bin/
+out/
+target/
+
+# IDE IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
