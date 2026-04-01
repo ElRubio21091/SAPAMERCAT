@@ -46,30 +46,32 @@ public class Main{
         scanner.nextLine();
 
         System.out.print("Nom: ");
-        String nom = scanner.nextLine();
+        String nom = llegirString();
 
         System.out.print("Preu: ");
-        double preu = scanner.nextDouble();
-
-        scanner.nextLine();
+        double preu = llegirDouble();
 
         System.out.print("Codi: ");
-        String codi = scanner.nextLine();
+        String codi = llegirString();
 
         switch (op) {
             case 1 -> {
                 System.out.print("Data (YYYY-MM-DD): ");
-                LocalDate data = LocalDate.parse(scanner.nextLine());
-                carret.afegirProducte(new Alimentacio(nom, preu, codi, data));
+                try {
+                    LocalDate data = LocalDate.parse(llegirString());
+                    carret.afegirProducte(new Alimentacio(nom, preu, codi, data));
+                } catch (Exception e) {
+                    System.out.println("Data incorrecta!");
+                }
             }
             case 2 -> {
                 System.out.print("Composicio: ");
-                String comp = scanner.nextLine();
+                String comp = llegirString();
                 carret.afegirProducte(new Textil(nom, preu, codi, comp));
             }
             case 3 -> {
                 System.out.print("Garantia dies: ");
-                int dies = scanner.nextInt();
+                int dies = llegirInt();
                 carret.afegirProducte(new Electronica(nom, preu, codi, dies));
             }
             case 4 -> {
@@ -82,6 +84,32 @@ public class Main{
 
         historial.add(new HashMap<>(carret.getCarret()));
         carret.buidar();
+    }
+
+    static double llegirDouble() {
+        while (true) {
+            try {
+                double valor = Double.parseDouble(scanner.nextLine());
+                return valor;
+            } catch (NumberFormatException e) {
+                System.out.print("Error! Introdueix un número correcte: ");
+            }
+        }
+    }
+
+    static int llegirInt() {
+        while (true) {
+            try {
+                int valor = Integer.parseInt(scanner.nextLine());
+                return valor;
+            } catch (NumberFormatException e) {
+                System.out.print("Error! Introdueix un enter correcte: ");
+            }
+        }
+    }
+
+    static String llegirString() {
+        return scanner.nextLine();
     }
 
 }
