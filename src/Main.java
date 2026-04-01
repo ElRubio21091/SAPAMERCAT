@@ -5,13 +5,11 @@ public class Main{
 
     static CarretCompra carret = new CarretCompra();
     static Scanner scanner = new Scanner(System.in);
+    static List<Map<Producte, Integer>> historial = new ArrayList<>();
+
     public static void main(String[] args) {
 
         int opcio;
-        int opcioP;
-        String nomP;
-        int preu;
-        int caducitat;
         System.out.println("BENVINGUTS AL SAPAMERCAT");
         do {
             System.out.println("-----------\n---INICI---\n-----------");
@@ -26,7 +24,7 @@ public class Main{
                     menuAfegir();
                     break;
                 case 2:
-
+                    caixa();
                     break;
                 case 3:
                     carret.mostrarCarret();
@@ -79,6 +77,13 @@ public class Main{
             }
         }
     }
+    static void caixa() {
+        Tiquet.imprimir(carret.getCarret());
+
+        historial.add(new HashMap<>(carret.getCarret()));
+        carret.buidar();
+    }
+
 }
 
 
